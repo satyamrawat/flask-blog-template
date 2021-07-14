@@ -1,0 +1,71 @@
+{%extends "layout.html" %}
+{%block body%}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{url_for("static", filename = "img/home-bg.jpg")}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>{{params['blog_name']}}</h1>
+            <span class="subheading">{{params['tag_line']}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+          <h2>Basic Action</h2>
+        <a class="btn btn-primary " href="/edit/0">Add a New Post </a>
+        <a class="btn btn-primary float-right" href="/logout">Logout </a>
+        <hr>
+        <h2>Upload a file</h2>
+        
+            <form action= "/uploader" method = "POST" enctype="multipart/form-data">
+                <!-- <label for="myfile">Select a file:</label> -->
+                <input type="file" id="myfile" name="myfile">
+                <button type ="submit" class="btn btn-primary float-right" >Submit </button>
+
+            </form>
+        <p></p>    
+        <hr>
+        <h2> Edit Posts </h2>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Sno</th>
+                <th scope="col">Title</th>
+                <th scope="col">Date</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for post in posts%}
+                <tr>
+                    <th scope="row">{{post.sno}}</th>
+                    <td>{{post.title}}</td>
+                    <td>{{post.date}}</td>
+                    <td><a class="btn btn-primary " href="/edit/{{post.sno}}">Edit </a></td>
+                    <td><a class="btn btn-primary " href="/delete/{{post.sno}}">Delete </a></td>
+                  </tr>
+          
+          
+          
+                {%endfor%}
+              
+              
+            </tbody>
+          </table>
+        
+      </div>
+    </div>
+  </div>
+
+  <hr>
+{% endblock %}

@@ -1,0 +1,22 @@
+{
+    "params": {
+        "local_server" : "True",
+        "local_uri" : "mysql://root:@localhost/idle blog",
+        "prod_uri" : "mysql://root:@localhost/idle blog",
+        "fb_url" : "https://facebook.com",
+        "tw_url" : "https://twitter.com",
+        "gh_url" : "https://github.com",
+        "blog_by" : "IDLE",
+        "blog_name" : "Blogs_NAME",
+        "tag_line" : "TAGLINE",
+        "gmail-username": "************@gmail.com",
+        "gmail-password" : "**********",
+        "about_text" : "TEXT TEXT ",
+        "no_of_posts" : 3,
+        "admin_user" : "idle",
+        "admin_password" : "passwordidle",
+        "upload_location" : "E:\\WORK\\python\\flask tutorial\\static\\img"
+
+    }
+
+}
